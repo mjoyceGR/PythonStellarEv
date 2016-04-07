@@ -1,0 +1,34 @@
+Polytrope/White Dwarf code
+Author: Meridith Joyce
+Adv Stellar Astrophysics, Dartmouth College
+10/19/15
+
+This package contains the code
+	main.py
+	functions_bank.py
+	constants_bank.py
+	plotmodule.py
+	rk2d.f90 (default in my code is to run without this- this was a "for fun" exercise that has not been extensively tested and it is not needed solve the problemsfor)
+
+and the data files
+	theta_xi.dat
+	physical.dat
+	physical_solar.dat
+	physical_BBN.dat
+	physical_M1.3.dat
+	wdstats.dat
+	fortran_input.txt (fortran input file, status = old; default is to run without this) 
+	results.txt (fortran output file, status = old; default is to run without this)
+
+	data files with the extension "joycerun" are the versions I computed with my machine; running the code will generate these files with the names as written here
+
+All scripts must be in the same repository in order to run code correctly
+Requires python 2.7 or higher, gfortran compiler if you want to try the rk2d.f90 subroutine (not currently the default; not extensively tested; not necessary)
+
+BEFORE RUNNING, adjust mass, chemical composition, polytropic index, and anything else you want to vary in "constants_bank.py"
+See "main.py" for instructions on execution
+Dummy data files from a run on my computer are included- change the names in main.py / plotmodule.py if desired
+
+Plotting module "plotmodule.py" may be executed on its own AFTER main.py has generated the appropriate data files, but this is equivalent to setting "plot_everything" to "True" in main.py
+
+The routine main_withfortran.py uses fortran 90 for numerical integration rather than python; it has not been extensively tested. My results and analysis are based on main.py, which uses python for all of the methods. 
